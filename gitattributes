@@ -1,0 +1,69 @@
+# Unity .gitattributes
+# Legges i rotmappa til Unity-prosjektet, ved siden av .gitignore
+# Krever Git LFS (kjør "git lfs install" én gang, eller slå det på i Fork)
+
+# --- Linjeskift: la Git normalisere tekstfiler ---
+* text=auto
+
+# --- Kode og tekst ---
+*.cs      text diff=csharp
+*.shader  text
+*.cginc   text
+*.hlsl    text
+*.json    text
+*.md      text
+*.txt     text
+
+# --- Unity sine tekstfiler (YAML): alltid LF, så de ikke endrer seg mellom maskiner ---
+*.meta          text eol=lf
+*.unity         text eol=lf
+*.prefab        text eol=lf
+*.asset         text eol=lf
+*.mat           text eol=lf
+*.anim          text eol=lf
+*.controller    text eol=lf
+*.overrideController text eol=lf
+*.physicsMaterial2D  text eol=lf
+*.inputactions  text eol=lf
+*.asmdef        text eol=lf
+
+# --- Bilder (Git LFS) ---
+*.png   filter=lfs diff=lfs merge=lfs -text
+*.jpg   filter=lfs diff=lfs merge=lfs -text
+*.jpeg  filter=lfs diff=lfs merge=lfs -text
+*.gif   filter=lfs diff=lfs merge=lfs -text
+*.tga   filter=lfs diff=lfs merge=lfs -text
+*.tif   filter=lfs diff=lfs merge=lfs -text
+*.tiff  filter=lfs diff=lfs merge=lfs -text
+*.exr   filter=lfs diff=lfs merge=lfs -text
+*.hdr   filter=lfs diff=lfs merge=lfs -text
+*.psd   filter=lfs diff=lfs merge=lfs -text
+*.psb   filter=lfs diff=lfs merge=lfs -text
+
+# --- Lyd (Git LFS) ---
+*.wav   filter=lfs diff=lfs merge=lfs -text
+*.mp3   filter=lfs diff=lfs merge=lfs -text
+*.ogg   filter=lfs diff=lfs merge=lfs -text
+*.aif   filter=lfs diff=lfs merge=lfs -text
+*.aiff  filter=lfs diff=lfs merge=lfs -text
+*.flac  filter=lfs diff=lfs merge=lfs -text
+
+# --- Video (Git LFS) ---
+*.mp4   filter=lfs diff=lfs merge=lfs -text
+*.mov   filter=lfs diff=lfs merge=lfs -text
+*.webm  filter=lfs diff=lfs merge=lfs -text
+
+# --- 3D-modeller (Git LFS) ---
+*.fbx   filter=lfs diff=lfs merge=lfs -text
+*.obj   filter=lfs diff=lfs merge=lfs -text
+*.blend filter=lfs diff=lfs merge=lfs -text
+
+# --- Fonter (Git LFS) ---
+*.ttf   filter=lfs diff=lfs merge=lfs -text
+*.otf   filter=lfs diff=lfs merge=lfs -text
+
+# --- Andre binærfiler (Git LFS) ---
+*.dll   filter=lfs diff=lfs merge=lfs -text
+*.pdf   filter=lfs diff=lfs merge=lfs -text
+*.zip   filter=lfs diff=lfs merge=lfs -text
+*.unitypackage filter=lfs diff=lfs merge=lfs -text
